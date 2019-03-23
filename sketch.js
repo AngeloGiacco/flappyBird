@@ -10,6 +10,9 @@ function draw() {
   bird.show()
   bird.update();
 
+  fill(0,255,255);
+  text(bird.score.toString(),width/2, 20)
+
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe())
   }
