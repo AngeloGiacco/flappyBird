@@ -9,9 +9,17 @@ function draw() {
   background(0);
   bird.show()
   bird.update();
+
+  if (frameCount % 100 == 0) {
+    pipes.push(new Pipe())
+  }
+
   for (var i = 0; i < pipes.length; i++) {
     pipes[i].show();
     pipes[i].update();
+    if (pipes[i].offscreen()) {
+      pipes.splice(i,1)
+    }
   }
 }
 
