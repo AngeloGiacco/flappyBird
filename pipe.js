@@ -1,9 +1,9 @@
-function Pipe() {
+function Pipe(speed) {
   this.top = random(height-32);
   this.bottom = height - this.top - random(200,300);
   this.x = width;
   this.w = 30;
-  this.speed = 5;
+  this.speed = speed;
   this.passed = false;
 
   this.highlight = false
@@ -45,4 +45,6 @@ function Pipe() {
       return false;
     }
   }
+
+
 }
