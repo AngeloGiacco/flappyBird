@@ -1,6 +1,6 @@
 function Bird() {
   this.y = height/2;
-  this.x = 64;
+  this.x = width/3;
   this.score = 0;
   this.end = false
 
