@@ -1,10 +1,14 @@
 var bird;
-var pipes = []
+var pipes = [];
+
+var pipeSpeed = 5;
+
 function setup() {
   createCanvas(window.innerWidth,window.innerHeight);
   bird = new Bird();
-  pipes.push(new Pipe())
+  pipes.push(new Pipe(pipeSpeed));
 }
+
 function draw() {
   background(0);
   bird.show()
@@ -12,10 +16,10 @@ function draw() {
 
   fill(0,255,255);
   textSize(16);
-  text(bird.score.toString(),width/2, 20)
+  text(bird.score.toString(),width/2, 20);
 
   if (frameCount % 100 == 0) {
-    pipes.push(new Pipe())
+    pipes.push(new Pipe(pipeSpeed));
   }
 
   for (var i = 0; i < pipes.length; i++) {
@@ -35,7 +39,6 @@ function draw() {
     textAlign(CENTER);
     text("Your score was:",width/2,height/2) - 35;
     text(bird.score.toString(),width/2, height/2 + 35);
-
   }
 }
 
@@ -44,3 +47,8 @@ function keyPressed() {
     bird.up();
   }
 }
+
+
+setInterval(function(){
+    pipeSpeed += 0.1;
+},500)
