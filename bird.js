@@ -2,6 +2,7 @@ function Bird() {
   this.y = height/2;
   this.x = 64;
   this.score = 0;
+  this.end = false
 
   this.gravity = 0.6;
   this.lift = -13;
@@ -15,7 +16,6 @@ function Bird() {
   this.up = function() {
     this.velocity += this.lift;
   }
-
   this.update = function() {
     this.velocity += this.gravity;
     this.velocity *= 0.9;
