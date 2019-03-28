@@ -3,7 +3,7 @@ var pipes = [];
 var pipeSpeed = 5;
 
 function setup() {
-  createCanvas(window.innerWidth,window.innerHeight);
+  createCanvas(window.innerWidth - 200,600);
   bird = new Bird();
   pipes.push(new Pipe(pipeSpeed));
 }
