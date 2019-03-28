@@ -1,6 +1,5 @@
 var bird;
 var pipes = [];
-
 var pipeSpeed = 5;
 
 function setup() {
